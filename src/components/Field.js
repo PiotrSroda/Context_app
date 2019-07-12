@@ -2,8 +2,8 @@ import React from "react";
 import LanguageContext from "../contexts/LanguageContext";
 
 class Field extends React.Component {
-  renderInput(value) {
-    switch (value) {
+  renderInput(language) {
+    switch (language) {
       case "dutch":
         return "Naam";
       case "polish":
@@ -17,7 +17,7 @@ class Field extends React.Component {
       <div className="ui field">
         <label>
           <LanguageContext.Consumer>
-            {value => this.renderInput(value)}
+            {({ language }) => this.renderInput(language)}
           </LanguageContext.Consumer>
         </label>
         <input />
